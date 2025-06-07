@@ -36,11 +36,11 @@
     <div class="container">
         <h1>Nginx работает 🎉</h1>
         <p>Контейнер с Django успешно проксируется через Nginx.</p>
-        <p>Быстрые ссылки для тестирования:</p>
+        <p>Быстрые ссылки для тестирования (пример):</p>
         <a href="{% url 'item_detail' id=1 %}">/item/1/</a>
-        <a href="{% url 'order_detail' id=1 %}">/order/2/</a>
-        <a href="{% url 'item_detail_intent' id=1 %}">/intent/item/2/</a>
-        <a href="{% url 'order_detail_intent' id=1 %}">/intent/order/2/</a>
+        <a href="{% url 'order_detail' id=1 %}">/order/1/</a>
+        <a href="{% url 'item_detail_intent' id=1 %}">/intent/item/1/</a>
+        <a href="{% url 'order_detail_intent' id=1 %}">/intent/order/1/</a>
         <br>
         <p>Вы также можете зайти в <a href="{% url 'admin:index' %}">панель администратора Django (/admin)</a></p>
     </div>
