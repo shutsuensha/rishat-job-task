@@ -144,4 +144,4 @@ def buy_order(request, id):
 
 def payment_success_order(request, id):
     order = get_object_or_404(Order, pk=id)
-    return render(request, "intent/orders/payment_success_order_intent.html", {"order": order})
+    return render(request, "orders/payment_success_order.html", {"order": order})
