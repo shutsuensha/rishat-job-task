@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Order {{ order.id }}</title>
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+
+<body>
+    <h1>Order #{{ order.id }}</h1>
+    <h1>Currency - {{ order.currency }}</h1>
+
+    <ul>
+        {% for item in order.items.all %}
+        <li>
+            {{item.id}} - {{ item.name }} — {{ item.price }} - {{ item.currency}}
+
+            {% if order.tax %}
+                — ({{ order.tax.name }} {{ order.tax.percent }}%)
+            {% endif %}
+        </li>
+        {% endfor %}
+    </ul>
+
+    {% if order.discount %}
+        <p>{{ order.discount.name }} — {{ order.discount.percent }}% на весь заказ</p>
+    {% endif %}
+
+    <p><strong>Total: {{ order.total_price }} - {{ order.currency }}</strong></p>
+
+    <button id="buy-button">Buy</button>
+
+    <script>
+        const stripe = Stripe('{{ stripe_public_key }}');
+
+        document.getElementById('buy-button').addEventListener('click', () => {
+            fetch(`/buy/order/{{ order.id }}/`)
+                .then(response => response.json())
+                .then(data => {
+                    if (data.error) {
+                        alert(data.error);
+                    } else {
+                        stripe.redirectToCheckout({ sessionId: data.sessionId });
+                    }
+                })
+                .catch(() => alert('Ошибка при создании сессии оплаты'));
+        });
+    </script>
+</body>
+
+</html>

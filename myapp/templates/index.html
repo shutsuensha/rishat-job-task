@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Nginx + Django</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f6f8;
+            color: #333;
+            padding: 40px;
+        }
+        h1 {
+            color: #2c3e50;
+        }
+        a {
+            display: block;
+            margin: 8px 0;
+            color: #3498db;
+            text-decoration: none;
+        }
+        a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            max-width: 600px;
+            margin: auto;
+            background: #fff;
+            padding: 25px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Nginx работает 🎉</h1>
+        <p>Контейнер с Django успешно проксируется через Nginx.</p>
+        <p>Быстрые ссылки для тестирования:</p>
+        <a href="{% url 'item_detail' id=1 %}">/item/1/</a>
+        <a href="{% url 'order_detail' id=1 %}">/order/2/</a>
+        <a href="{% url 'item_detail_intent' id=1 %}">/intent/item/2/</a>
+        <a href="{% url 'order_detail_intent' id=1 %}">/intent/order/2/</a>
+        <br>
+        <p>Вы также можете зайти в <a href="{% url 'admin:index' %}">панель администратора Django (/admin)</a></p>
+    </div>
+</body>
+</html>

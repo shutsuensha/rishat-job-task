@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Intent Payment Success</title>
+</head>
+<body>
+    <h1>id: {{ item.id }}</h1>
+    <h1>name: {{ item.name }}</h1>
+	<p>description: {{ item.description|default:"No description" }}</p>
+	<p>price: {{ item.price }} - {{ item.currency }}</p>
+    <h1>Спасибо за покупку!</h1>
+    <p>Оплата intent прошла успешно.</p>
+</body>
+</html>
