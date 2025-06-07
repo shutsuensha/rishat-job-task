@@ -75,16 +75,3 @@ http://localhost/
 ```bash
 docker run --rm --network stripe-network --env-file .env django-image-stripe-app python manage.py test
 ```
-
-dankupr21@gmail.com
-4242 4242 4242 4242
-12/34
-123
-Daniil Kupryianchyk
-42424
-
-
-все по тз чекнуть
-
-кидаем ссылку на github
-
