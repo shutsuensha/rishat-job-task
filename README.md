@@ -32,6 +32,10 @@ http://localhost/
 
 
 
+http://185.250.44.183/
+
+admin admin
+
 
 dankupr21@gmail.com
 4242 4242 4242 4242
